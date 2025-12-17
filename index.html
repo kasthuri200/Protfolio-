@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kasthuri S — Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    ...
+    
+  
+<!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<div id="progress-bar"></div>
+<!-- Safe DOM-ready scripts: theme toggle + rocket button listeners -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1) Theme toggle — use the exact id used in your HTML.
+        // In your HTML you have: <button id="themeToggle" ...> so we use that id here.
+        const themeToggle = document.getElementById("themeToggle") || document.getElementById("theme-toggle");
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("light-mode");
+            });
+        }
+
+        // 2) Rocket scroll-to-top button
+        const rocket = document.getElementById("rocket-btn");
+        if (rocket) {
+            rocket.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+
+        // 3) Any other elements you attach listeners to — safe guard example:
+        const resetBtn = document.getElementById("reset-btn");
+        if (resetBtn) {
+            resetBtn.addEventListener("click", () => {
+                const form = document.getElementById("contact-form");
+                if (form) form.reset();
+            });
+        }
+    });
+</script>
+
+
+
+
+<body>
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="mobile-nav-btn" id="mobileNavBtn" aria-label="Menu">☰</button>
+
+        <div class="logo-square">S K</div>
+
+        
+
+
+
+            <div class="navlinks">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact" class="cta contact-btn">Contact</a>
+            </div>
+            <button id="themeToggle" class="btn-outline">🌓</button>
+
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero reveal-zoom">
+            <div class="hero-left">
+            <h1>Hello, I'm <span id="display-name">Kasthuri S</span> —
+                <span id="typing-text" class="typing"></span>
+            </h1>
+
+                <p>I build clean, responsive websites using HTML, CSS, and JavaScript.</p>
+
+                <div class="hero-cta">
+
+                <!-- new -->
+                <a class="btn btn-outline" href="hire-me.html">Hire Me</a>
+                <a class="btn btn-outline resume-btn" href="assets/updateOriginalresume.pdf" download="updateOriginalresume.pdf">Resume</a>
+                </div>
+            </div>
+
+            <div class="hero-right reveal-zoom">
+        <div class="profile-card-box">
+        
+            <img src="assets/profile.jpg" alt="Profile Photo" class="profile-photo">
+        
+            <h2 class="profile-name">Kasthuri S</h2>
+            <p class="profile-role">Frontend Developer</p>
+            <p class="profile-location">📍 Tiruvannamalai</p>
+        
+            <div class="profile-info">
+                <p>📞 <strong>Phone:</strong> 7603969037</p>
+                <p>✉️ <strong>Email:</strong> kasthuri6114@gmail.com</p>
+            <p>
+                🔗 <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/kasthuri" target="_blank" class="profile-link">
+                    linkedin.com/in/kasthuri
+                </a>
+            </p>
+
+            </div>
+        
+        </div>
+
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="section reveal-left">
+            <div class="card">
+                <h3>About Me</h3>
+                <p>Final-year B.Tech Information Technology student specializing in frontend development.
+                Skilled in HTML, CSS, JavaScript, and building responsive, user-friendly web interfaces.
+                Motivated to apply technical skills in real-world projects and grow as a software developer.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section reveal-right">
+            <h3>Projects</h3>
+
+            <div class="card-grid">
+
+                <!-- Project 1 -->
+                <div class="card reveal-zoom">
+                    <img src="assets/blockchain-screenshot.png" class="project-img" alt="project screenshot">
+
+                    <h4>Blockchain Simulator</h4>
+                    <p>A Java-based project designed to understand how blockchain works, including
+                    block creation, hashing, and linking blocks using previous hash values.
+</p>
+
+                    <div class="project-links">
+                       
+                        <a class="btn btn-outline" href="https://github.com/kasthuri200/BlockchainSimulator.git"
+                            target="_blank">Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+    <div class="project-card">
+        <img src="assets/notes-app.png" alt="Notes App">
+    
+        <h3>Notes App</h3>
+        <p>
+            A JavaScript-based Notes App that allows users to create, edit,
+            and delete notes using local storage.
+        </p>
+    
+       
+    
+        <a href="https://github.com/kasthuri200/NotesApp" target="_blank" class="btn code">Code</a>
+    </div>
+
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section reveal-left">
+            <h3>Skills</h3>
+            <div class="card">
+                <div class="chips">
+                    <span class="chip">HTML</span>
+                    <span class="chip">CSS</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">Java (basic)</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section reveal-right">
+            <h3>Contact Me</h3>
+
+            <div class="card">
+                <form id="contact-form" action="https://formspree.io/f/xdkqyarl" method="POST">
+
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Your name" required />
+                        <input type="email" name="_replyto" placeholder="Your email" required />
+                    </div>
+
+                    <input type="text" name="subject" placeholder="Subject" />
+
+                    <textarea name="message" placeholder="Your message" required></textarea>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="button" class="btn btn-outline" id="reset-btn">Reset</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© <span id="year"></span> Kasthuri S — All rights reserved.</p>
+        </footer>
+
+    </div>
+
+   <!- 🚀 Rocket Scroll-to-Top Button ->
+    <button id="rocket-btn">🚀</button>
+    
+    <script>
+        document.getElementById("rocket-btn").addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+    
+    <script src="script.js"></script>
+
+</body>
+
+</html>
